@@ -31,10 +31,10 @@ public class RearrangeNumbers {
             
             while(positivePostion<negativePosition-1){ // run while positive number postion is greater than negative number position
                 
-                while(arrList.get(positivePostion)>=0){
+                while(positivePostion<arrList.size()-1&&arrList.get(positivePostion)>=0){
                     positivePostion++;
                 }
-                while(arrList.get(negativePosition)<0){
+                while(negativePosition>0&&arrList.get(negativePosition)<0){
                     negativePosition--;
                 }
 
