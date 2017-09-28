@@ -23,10 +23,10 @@ For example, if the input array is [-1, 2, -3, 4, 5, 6, -7, 8, 9], then the outp
 	-Swap the value in both pointers and repeat the process again till array is complete.</br>
 2. Replace every second element on the left side of array that contains the positive number with the element on the right side of array.</br>
 
-<b>Input</b>
+<b>Input</b></br>
 1</br>
 9</br> 
-9 4 -2 -1 5 0 -5 -3 2</br>
+9 4 -2 -1 5 0 -5 -3 2</br></br>
 <b>Output</b></br>
 9 -1 2 -5 5 -3 0 -2 4</br>
 </body>  
