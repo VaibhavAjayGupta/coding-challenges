@@ -50,7 +50,7 @@ public class RearrangeNumbers {
             
             for(int k=1;k<arrList.size();k=k+2)
             {
-                if(negativePosition+(k/2) <arrList.size())
+                if(arrList.get(k)>0&&negativePosition+(k/2) <arrList.size())
                 {
                 int temp = arrList.get(k);
                 arrList.set(k, arrList.get(negativePosition+(k/2)));
