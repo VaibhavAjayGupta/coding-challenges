@@ -1,3 +1,5 @@
+<Html>
+
 Problem statement
 
 Rearrange positive and negative numbers in O(n) time and O(1) extra space
@@ -11,4 +13,6 @@ For example, if the input array is [-1, 2, -3, 4, 5, 6, -7, 8, 9], then the outp
 
 Solution
 
-
+1.Move all the positive integers to the left of array and negative integers to the right of array.
+  
+</Html>
