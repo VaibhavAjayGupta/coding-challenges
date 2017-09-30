@@ -2,7 +2,7 @@
 <html>
 
 <body>
-    <p>Sort the given numbers in descending order using countsort:</p>
+    <p>Find the largest multiple of 3 using given numbers:</p>
 
     <form id="frm1" action="">
         Numbers : <input type="text" id="arrayInput"> Ex - 9,3,4,5,6<br> Output: <span id="output"></span><br><br>
@@ -31,7 +31,7 @@
             }
 
             for (let i = maxValue; i >= 0; i--) { // push all the elements to sorted array in decreasing order
-                if (typeof tempArray[i] != undefined || tempArray[i] != null) {
+                if (typeof tempArray[i] != 'undefined' || tempArray[i] != null) {
                     for (let j = 0; j < tempArray[i]; j++) {
                         sortedArray.push(i);
                     }
