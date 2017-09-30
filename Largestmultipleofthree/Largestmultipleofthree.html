@@ -19,7 +19,7 @@
             let tempArray = [], sortedArray = [];
             let maxValue = 0, sum=0;
             for (let value of inputArray) { // count the number of each element and store in new array
-                if (typeof tempArray[value] == undefined || tempArray[value] == null) {
+                if (typeof tempArray[value] == 'undefined' || tempArray[value] == null) {
                     tempArray[value] = 1;
                 } else
                     tempArray[value] = tempArray[value] + 1;
@@ -118,7 +118,7 @@
         function printOutput(array){ // convert array number to string form
             let str = "";
             for(let i=0;i<array.length;i++){
-                if(typeof array[i]!= 'undefiened' && array[i] != null ){
+                if(typeof array[i]!= 'undefined' && array[i] != null ){
                     str+=array[i];
                 }
             }
