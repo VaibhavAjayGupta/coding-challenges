@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <p>Sort the given numbers in descending order using countsort:</p>
+
+    <form id="frm1" action="">
+        Numbers : <input type="text" id="arrayInput"> Ex - 9,3,4,5,6<br> Output: <span id="output"></span><br><br>
+        <input type="button" onclick="find()" value="Find">
+    </form>
+
+    <script>
+        function returnValue (array,sum) {
+            this.array=array;
+            this.sum=sum;
+        }
+        function countSort(inputArray) { // CountSort
+
+            let tempArray = [], sortedArray = [];
+            let maxValue = 0, sum=0;
+            for (let value of inputArray) { // count the number of each element and store in new array
+                if (typeof tempArray[value] == undefined || tempArray[value] == null) {
+                    tempArray[value] = 1;
+                } else
+                    tempArray[value] = tempArray[value] + 1;
+
+                if (maxValue < value) {
+                    maxValue = value;
+                }
+                sum=sum+value;
+            }
+
+            for (let i = maxValue; i >= 0; i--) { // push all the elements to sorted array in decreasing order
+                if (typeof tempArray[i] != undefined || tempArray[i] != null) {
+                    for (let j = 0; j < tempArray[i]; j++) {
+                        sortedArray.push(i);
+                    }
+                }
+            }
+            let output = new returnValue(sortedArray,sum);
+            return output;
+        }
+        function find() {
+            let inputArr = document.getElementById("arrayInput").value.split(","); // convert the input into array
+            let numArray =[];
+            for(var value of inputArr){
+                numArray.push(parseInt(value));
+            }
+            let outArr = countSort(numArray);
+            if(outArr.sum%3==0)
+            printOutput(outArr.array);
+            else
+            {
+                if(outArr.sum%3==1){
+                    let count =0;
+                    let deleteArray=[];
+                    for(let i=outArr.array.length-1;i>=0;i--){
+                        if(outArr.array[i]%3==1){
+                            delete outArr.array[i];
+                            count--;
+                            printOutput(outArr.array);
+                            break;
+                        }
+                        else if(outArr.array[i]%3==2){
+                            if(count<2){
+                                deleteArray.push(i);
+                                count++;
+                            }
+                        }
+
+                    }
+                    if(count==2){
+                        let tempArr=[];
+                        for(let i=0;i<outArr.array.length;i++){
+                            if(i!=deleteArray[0]&&i!=deleteArray[1])
+                            tempArr.push(outArr.array[i]);
+                        }
+                        printOutput(tempArr);
+
+                    }else if(count==0)
+                    {
+                        document.getElementById("output").innerHTML = "Not Possible";
+                    }
+                }else if(outArr.sum%3==2){
+                    let count =0;
+                    let deleteArray=[];
+                    for(let i=outArr.array.length-1;i>=0;i--){
+                        if(outArr.array[i]%3==2){
+                            delete outArr.array[i];
+                            printOutput(outArr.array);
+                            count--;
+                            break;
+                        }
+                        else if(outArr.array[i]%3==1){
+                            if(count<2){
+                                deleteArray.push(i);
+                                count++;
+                            }
+                        }
+
+                    }
+                    if(count==2){
+                        let tempArr=[];
+                        for(let i=0;i<outArr.array.length;i++){
+                            if(i!=deleteArray[0]&&i!=deleteArray[1])
+                            tempArr.push(outArr.array[i]);
+                        }
+                        printOutput(tempArr);
+
+                    }else if(count==0)
+                    {
+                        document.getElementById("output").innerHTML = "Not Possible";
+                    }
+                }
+            }
+        }
+
+        function printOutput(array){
+            let tempArr = [];
+            let str = "";
+            for(let i=0;i<array.length;i++){
+                if(typeof array[i]!= 'undefiened' && array[i] != null ){
+                    str+=array[i];
+                }
+            }
+            document.getElementById("output").innerHTML = str;
+
+        }
+    </script>
+
+</body>
+
+</html>
