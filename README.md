@@ -10,7 +10,7 @@
 	<li>
 	Rearrange positive and negative numbers one after another in an unsorted array.
 	</li>
-	<a href="https://vaibhavajaygupta.github.io/coding-challenges/swap%20two%20numbers/index.html" target='_blank'>Swap 2 numbers without using third variable. </a></li>
+	<li><a href="https://vaibhavajaygupta.github.io/coding-challenges/swap%20two%20numbers/index.html" target='_blank'>Swap 2 numbers without using third variable. </a></li>
 
 </ul>
 </body>
